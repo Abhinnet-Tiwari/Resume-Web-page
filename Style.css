@@ -1,3 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Canvas */
 #wrapper-canvas canvas {
     max-width: 100%;
+}
+
+
+
+/* Swiper Code */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #1788ae;
+}
+
+.swiper-pagination-bullet {
+    background-color: #23b9eb;
+}
+
+/* Dark-Light Mode */
+:root {
+    --background-color: #111;
+    --color: white;
+}
+
+body.light-mode {
+    --background-color: #dfe0ee;
+    --color: black;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 20;
+}
+
+footer {
+    margin-bottom: 40px;
+}
+
+#contactImg {
+    filter: drop-shadow(0px 0px 60px rgba(21, 108, 248, 0.945));
+}
+
+#aboutSection {
+    position: fixed;
+    color: var(--color);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    display: none;
+}
+
+#aboutSection #a1 {
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    height: 90%;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+    text-align: center;
+}
+
+#closeBtn {
+    background-color: #fff;
+    color: #111;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 13px;
+    right: 13px;
+}
+
+#closeBtn:hover {
+    background-color: #ecc8c8;
+}
+
+#a2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 95%;
+}
+
+#mernIcon {
+    cursor: pointer;
+}
+
+#left-column {
+    padding: 20px;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+#left-column #mernIcon {
+    padding-top: 10px;
+    gap: 15px;
+}
+
+#right-column {
+    padding: 20px;
+}
+
+#a1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#abt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+    width: 150px;
+    margin: 20px;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.popup-1 {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10);
+    margin-bottom: 8px;
+    padding: 10px;
+    background-color: white;
+    font-size: 14px;
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    pointer-events: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.popup-1::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid white;
+}
+
+.image-container:hover .popup-1 {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.volume-slider {
+    width: 80px;
+    height: 5px;
+}
+
+
+
+/* Media Quaries */
+@media(max-width:970px) {
+    #codeImg {
+        width: 250px;
+        height: 280px;
+    }
+}
+
+@media(max-width:650px) {
+    #a2 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #left-column {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .volume-slider {
+        display: none;
+    }
+}
+
+@media(max-width:475px) {
+    #right-column {
+        display: none;
+    }
+
+    #left-column {
+        height: 100%;
+    }
+}
+
+@media(min-width:1030px) {
+
+    #left-column {
+        width: 60%;
+    }
+
+    #codeImg {
+        width: 500px;
+        height: 680px;
+    }
 }
